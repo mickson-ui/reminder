@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isDrawerVisible = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            ReminderListView(isDrawerVisible: $isDrawerVisible, viewModel: ReminderViewModel())
         }
-        .padding()
     }
 }
 
